@@ -1,0 +1,6 @@
+services:
+    _defaults:
+        tags:
+            - doctrine.fixture.orm
+
+    App\Model\Feedback\Fixture\FeedbackFixture: ~

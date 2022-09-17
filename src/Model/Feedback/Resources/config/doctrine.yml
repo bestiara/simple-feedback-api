@@ -1,0 +1,13 @@
+doctrine:
+    dbal:
+        types:
+            feedback_id: App\Model\Feedback\Doctrine\Type\FeedbackIdType
+
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    author:
+                        type: xml
+                        dir: '%kernel.project_dir%/src/Model/Feedback/Resources/config/orm'
+                        prefix: App\Model\Feedback\Entity
