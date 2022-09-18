@@ -7,7 +7,7 @@ doctrine:
         entity_managers:
             default:
                 mappings:
-                    author:
+                    feedback:
                         type: xml
                         dir: '%kernel.project_dir%/src/Model/Feedback/Resources/config/orm'
                         prefix: App\Model\Feedback\Entity

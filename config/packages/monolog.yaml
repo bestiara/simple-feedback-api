@@ -1,0 +1,3 @@
+monolog:
+    channels:
+        - async_events
