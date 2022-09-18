@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Flusher;
 
-use App\Core\Entity\AggregationRootInterface;
-use App\Infrastructure\AsyncEventDispatcher\AsyncEventDispatcherInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Psr\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Флашер изменений UoW.
