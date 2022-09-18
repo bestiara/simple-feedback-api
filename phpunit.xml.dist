@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+    bootstrap="tests/bootstrap.php"
+    cacheResultFile="./var/.phpunit.result.cache"
+    colors="true"
+    failOnWarning="true"
+>
+    <php>
+        <ini name="error_reporting" value="-1"/>
+        <env name="SHELL_VERBOSITY" value="-1"/>
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="verbose=0"/>
+
+        <env name="KERNEL_CLASS" value="App\Kernel" force="true"/>
+        <env name="APP_ENV" value="test" force="true"/>
+        <env name="APP_SECRET" value="s$cretf0rt3st" force="true"/>
+
+        <env name="LOCK_DSN" value="semaphore"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="integration">
+            <directory>./src/Model/*/Tests/Integration</directory>
+        </testsuite>
+
+        <testsuite name="unit">
+            <directory>./src/Model/*/Tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+
+    <extensions>
+        <extension class="DAMA\DoctrineTestBundle\PHPUnit\PHPUnitExtension"/>
+    </extensions>
+</phpunit>

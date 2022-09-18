@@ -46,3 +46,5 @@ composer-install:
 composer-update:
 	docker-compose run --rm php-cli composer update
 
+test:
+	docker-compose run --rm php-cli bin/phpunit --testsuite unit,integration

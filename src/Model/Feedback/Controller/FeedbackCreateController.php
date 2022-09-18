@@ -33,7 +33,7 @@ final class FeedbackCreateController extends AbstractController
             FeedbackId::next(),
             $requestData->name,
             $requestData->phone,
-            $request->getClientIp()
+            $request->getClientIp() ?? ''
         );
 
         try {

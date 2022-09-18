@@ -27,9 +27,9 @@ class FeedbackFactory
 
         return new Feedback(
             FeedbackId::next(),
-            $faker->name,
-            $faker->phoneNumber,
-            $faker->ipv4
+            $faker->name(),
+            $faker->phoneNumber(),
+            $faker->ipv4()
         );
     }
 
