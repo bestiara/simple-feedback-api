@@ -1,0 +1,15 @@
+services:
+    App\Infrastructure\Controller\Request\ParamConverter\RequestDataConverter:
+        arguments:
+            $validator: '@validator'
+            $serializer: '@serializer'
+        tags:
+            - { name: request.param_converter, converter: request_data_converter }
+
+    App\Infrastructure\Controller\Request\ParamConverter\PageableConverter:
+        tags:
+            - { name: request.param_converter, converter: pageable_converter }
+
+    App\Infrastructure\Controller\Request\ParamConverter\ParsedIncludesParamConverter:
+        tags:
+            - { name: request.param_converter, converter: parsed_includes_converter }

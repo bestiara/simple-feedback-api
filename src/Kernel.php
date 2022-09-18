@@ -2,8 +2,8 @@
 
 namespace App;
 
-//use App\Infrastructure\CommandBus\Container\HandlerMapping\CommandHandlerMapping;
-//use League\Tactician\Bundle\TacticianBundle;
+use App\Infrastructure\CommandBus\Container\HandlerMapping\CommandHandlerMapping;
+use League\Tactician\Bundle\TacticianBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
@@ -26,15 +26,13 @@ final class Kernel extends BaseKernel
                 continue;
             }
 
-//            if ($class === TacticianBundle::class) {
-//                yield new TacticianBundle(
-//                    new CommandHandlerMapping(),
-//                );
-//            } else {
-//                yield new $class();
-//            }
-
-            yield new $class();
+            if ($class === TacticianBundle::class) {
+                yield new TacticianBundle(
+                    new CommandHandlerMapping(),
+                );
+            } else {
+                yield new $class();
+            }
         }
     }
 

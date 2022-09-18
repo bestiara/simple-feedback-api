@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        autowire: true
+
+    App\Infrastructure\CommandBus\CommandBusInterface:
+        class: App\Infrastructure\CommandBus\CommandBus
+        arguments:
+            $commandBus: '@tactician.commandbus.default'
+
+    app.command_bus:
+        alias: App\Infrastructure\CommandBus\CommandBusInterface

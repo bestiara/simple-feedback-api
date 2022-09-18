@@ -1,0 +1,15 @@
+services:
+    app.fractal:
+        alias: League\Fractal\Manager
+
+    League\Fractal\Manager:
+        arguments:
+            - '@app.fractal.scope_factory'
+        calls:
+            - { method: setSerializer, arguments: [ '@app.fractal.json_api_serializer' ] }
+
+    app.fractal.json_api_serializer:
+        class: League\Fractal\Serializer\JsonApiSerializer
+
+    app.fractal.scope_factory:
+        class: League\Fractal\ScopeFactory
