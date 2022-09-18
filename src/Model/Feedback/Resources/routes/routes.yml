@@ -1,0 +1,9 @@
+feedback_create:
+    controller: App\Model\Feedback\Controller\FeedbackCreateController
+    path: /feedbacks
+    methods: POST
+
+feedback_list:
+    controller: App\Model\Feedback\Controller\FeedbacksController
+    path: /feedbacks
+    methods: GET

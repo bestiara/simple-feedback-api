@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        tags:
+            - controller.service_arguments
+
+    App\Model\Feedback\Controller\FeedbacksController: ~
+
+    App\Model\Feedback\Controller\FeedbackCreateController: ~

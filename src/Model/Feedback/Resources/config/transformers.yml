@@ -1,0 +1,5 @@
+services:
+    _defaults:
+        autowire: true
+
+    App\Model\Feedback\Controller\Transformer\FeedbackTransformer: ~
