@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        autowire: true
+
+    app.feedback.doctrine_repository:
+        class: Doctrine\ORM\EntityRepository
+        factory: [ '@doctrine.orm.entity_manager', 'getRepository' ]
+        arguments:
+            $entityName: App\Model\Feedback\Entity\Feedback
+
+    App\Model\Feedback\Entity\FeedbackRepository: ~
