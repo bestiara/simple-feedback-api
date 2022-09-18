@@ -1,0 +1,7 @@
+services:
+    _defaults:
+        autowire: true
+        tags:
+            - tactician.handler
+
+    App\Model\Feedback\UseCase\Create\FeedbackCreateCommandHandler: ~
